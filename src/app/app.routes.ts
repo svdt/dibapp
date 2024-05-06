@@ -7,6 +7,5 @@ import { SurveysComponent } from './surveys/surveys.component';
 export const routes: Routes = [
     { path: '', component: HomeComponent }, // Index route
     { path: 'surveys', component: SurveysComponent },
-    { path: 'about', component: AboutComponent },
-    
+    { path: 'about', component: AboutComponent },  
 ];
