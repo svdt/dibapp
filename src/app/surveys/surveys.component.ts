@@ -51,6 +51,9 @@ export class SurveysComponent {
     // Hier werden die Aufgaben geladen und der tasks-Array aktualisiert
     // this.surveyService.getSurveys().subscribe((surveys) => (this.surveys = surveys));
     this.surveys = this.surveyService.getSurveys();
+    // this.surveyService.getSurveys().subscribe((surveys: Survey[]) => {
+    //   this.surveys = surveys;
+    // });
   }
 
   onSubmitSurvey() {
@@ -60,22 +63,23 @@ export class SurveysComponent {
       answears: []
     };
     this.surveyService.addSurvey(newSurvey);
+    this.question = "";
   }
 
   removeSurvey(i: number) {
     this.surveyService.removeSurvey(i);
   }
 
-  remove(answear: String) {
-
-  }
-
   onSubmitAnswear(i: number) {
     this.surveyService.addAnswear(i, this.answear);
+    // this.surveys[i].answears.push(this.answear);
+    // this.surveyService.updateSurvey(i, this.surveys[i]);
     this.answear = "";
   }
 
   removeAnswear(si: number, ai: number) {
     this.surveyService.removeAnswear(si, ai);
+    // this.surveys[si].answears.splice(ai, 1);
+    // this.surveyService.updateSurvey(si, this.surveys[si]);
   }
 }

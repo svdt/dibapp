@@ -25,8 +25,8 @@ export class MenuComponent {
   ngOnInit(): void {
     // Diese Methode wird aufgerufen, wenn die Komponente initialisiert wird
     // Hier werden die Aufgaben geladen und der tasks-Array aktualisiert
-    // this.surveyService.getSurveys().subscribe((surveys) => (this.surveys = surveys));
     this.surveys = this.surveyService.getSurveys();
+    // this.surveyService.getSurveys().subscribe((surveys) => (this.surveys = surveys));
   }
 
 }

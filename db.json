@@ -1,0 +1,14 @@
+{
+  "surveys": [
+    {
+      "id": "1",
+      "question": "Wohin soll die nächste Reise gehen?",
+      "answears": ["Palermo", "Maputo"]
+    },
+    {
+      "id": "2",
+      "question": "Was ist dein Lieblingsessen?",
+      "answears": ["Salat"]
+    }
+  ]
+}
