@@ -1,0 +1,44 @@
+<h2>Umfragen</h2>
+<!-- 
+<div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div> -->
+  <mat-accordion class="example-headers-align">
+    <ng-container *ngFor="let survey of surveys; let isLast = last; let s_index=index;">
+        <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <button mat-flat-button style="width: 10px;" (click)="removeSurvey(s_index)"><mat-icon>cancel</mat-icon></button>
+        <mat-panel-title>
+          {{ survey.question }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <mat-list>
+            <ng-container *ngFor="let answear of survey.answears; let isLast = last; let a_index=index;">
+            <mat-list-item>
+              <button mat-flat-button style="width: 10px;" (click)="removeAnswear(s_index, a_index)"><mat-icon>cancel</mat-icon></button>
+                <span>{{ answear }} </span>
+            </mat-list-item>
+            <mat-divider *ngIf="!isLast"></mat-divider>
+            <!-- <mat-divider></mat-divider> -->
+            </ng-container>
+            
+            <form class="example-form" style="margin-top: 20px;" (ngSubmit)="onSubmitAnswear(s_index)">
+              <mat-list-item>
+                <mat-icon>add</mat-icon>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Antwort" name="answear" [(ngModel)]="answear">
+                </mat-form-field>
+            </mat-list-item>
+          </form>
+        </mat-list>
+    </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+  
+  <form class="example-form" style="margin-top: 20px;" (ngSubmit)="onSubmitSurvey()">
+    <mat-icon>add</mat-icon>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Frage" name="question" [(ngModel)]="question">
+    </mat-form-field>
+</form>

@@ -1,0 +1,12 @@
+<mat-toolbar>
+  <button mat-button routerLink="/">Home</button>
+
+<button mat-button routerLink="/surveys">Umfragen</button>
+<!-- 
+<button mat-button [matMenuTriggerFor]="beforeMenu">Umfragen</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item *ngFor="let survey of surveys" routerLink="/{{ survey.id }}">{{ survey.question }}</button>
+</mat-menu> -->
+
+<button mat-button routerLink="/about">About</button>
+</mat-toolbar>
